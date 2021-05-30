@@ -1,6 +1,8 @@
 % Оглавление (ГОСТ Р 7.0.11-2011, 5.2)
 \ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{} % не рекомендуется применять пакет микротипографики к автоматически генерируемому оглавлению
+\setlength{\otstuplen}{0pt}
 \tableofcontents*
+\setlength{\otstuplen}{\parindent}
 \addtocontents{toc}{\protect\tocheader}
 \endTOCtrue
 \ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=true}}{}

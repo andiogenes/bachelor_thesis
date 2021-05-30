@@ -57,9 +57,18 @@
 
 %%% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
 %\include{Dissertation/title}           % Титульный лист
+\includepdf[pages=1]{doc_prakt.pdf}
+
 \include{Dissertation/contents}        % Оглавление
 \ifnumequal{\value{contnumfig}}{1}{}{\counterwithout{figure}{chapter}}
 \ifnumequal{\value{contnumtab}}{1}{}{\counterwithout{table}{chapter}}
+
+% Задание
+\clearpage
+\addcontentsline{toc}{chapter}{Индивидуальное задание}
+\addcontentsline{toc}{section}{Инструктаж по ОТ, ТБ, ПБ, ПВТР}
+\includepdf[pages=3]{doc_prakt.pdf}
+
 \include{Dissertation/introduction}    % Введение
 \ifnumequal{\value{contnumfig}}{1}{\counterwithout{figure}{chapter}
 }{\counterwithin{figure}{chapter}}
@@ -68,7 +77,7 @@
 \include{Dissertation/part1}           % Глава 1
 \include{Dissertation/part2}           % Глава 2
 \include{Dissertation/part3}           % Глава 3
-\include{Dissertation/part4}           % Глава 4
+%\include{Dissertation/part4}           % Глава 4
 \include{Dissertation/conclusion}      % Заключение
 %\include{Dissertation/acronyms}        % Список сокращений и условных обозначений
 %\include{Dissertation/dictionary}      % Словарь терминов
@@ -83,7 +92,14 @@
 \setlength{\midchapskip}{20pt}
 \renewcommand*{\afterchapternum}{\par\nobreak\vskip \midchapskip}
 \renewcommand\thechapter{\Asbuk{chapter}} % Чтобы приложения русскими буквами нумеровались
+\chapterstyle{thesisgostchapname}
+\renewcommand*{\cftchaptername}{\chaptername\space}
 
+\renewcommand{\hdngalign}{\centering}                % по центру
+\renewcommand{\hdngaligni}{}% по центру
+\setlength{\otstuplen}{0pt}
+
+\setsecheadstyle{\basegostsectionfont}
 \include{Dissertation/appendix}        % Приложения
 
 \setcounter{totalappendix}{\value{chapter}} % Подсчёт количества приложений

@@ -1,0 +1,3 @@
+[submodule "listings/flovver"]
+	path = listings/flovver
+	url = https://github.com/flovver/flovver

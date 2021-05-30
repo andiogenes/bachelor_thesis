@@ -17,7 +17,7 @@
 
 %%% Макет страницы %%%
 % Выставляем значения полей (ГОСТ 7.0.11-2011, 5.3.7)
-\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1cm, nofoot, nomarginpar} %, heightrounded, showframe
+\geometry{a4paper, top=2cm, bottom=2cm, left=2cm, right=1cm, nofoot, nomarginpar} %, heightrounded, showframe
 \setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
 \setlength{\footskip}{12.3pt} % снимет warning, согласно https://tex.stackexchange.com/a/334346
 
@@ -36,7 +36,9 @@
 \brokenpenalty=4991     % Ограничение на разрыв страницы, если строка заканчивается переносом
 
 %%% Блок управления параметрами для выравнивания заголовков в тексте %%%
+\newcommand\myotstup{1.6}
 \newlength{\otstuplen}
+\setlength{\otstuplen}{\myotstup\parindent}
 \setlength{\otstuplen}{\theotstup\parindent}
 \ifnumequal{\value{headingalign}}{0}{% выравнивание заголовков в тексте
     \newcommand{\hdngalign}{\centering}                % по центру
@@ -113,7 +115,7 @@
     \renewcommand*{\chaptitlefont}{\basegostsectionfont}
     \renewcommand*{\chapterheadstart}{}
     \ifnumgreater{\value{headingdelim}}{0}{%
-        \renewcommand*{\afterchapternum}{.\space}   % добавляет точку с пробелом после номера раздела
+        \renewcommand*{\afterchapternum}{\quad}   % добавляет точку с пробелом после номера раздела
     }{%
         \renewcommand*{\afterchapternum}{\quad}     % добавляет \quad после номера раздела
     }
@@ -125,7 +127,7 @@
 \makeatletter
 \makechapterstyle{thesisgostchapname}{%
     \chapterstyle{thesisgost}
-    \renewcommand*{\printchapternum}{\chapnumfont \thechapter}
+	\renewcommand*{\printchapternum}{\chapnumfont \thechapter \linebreak}
     \renewcommand*{\printchaptername}{\hdngaligni\hdngalign\chapnamefont \@chapapp} %
 }
 \makeatother
