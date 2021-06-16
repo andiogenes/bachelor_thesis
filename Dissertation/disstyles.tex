@@ -13,7 +13,7 @@
 %% И правит сразу и в таблицах (если со звёздочкой)
 %\DoubleSpacing*     % Двойной интервал
 \OnehalfSpacing*    % Полуторный интервал
-%\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
 
 %%% Макет страницы %%%
 % Выставляем значения полей (ГОСТ 7.0.11-2011, 5.3.7)
@@ -36,9 +36,7 @@
 \brokenpenalty=4991     % Ограничение на разрыв страницы, если строка заканчивается переносом
 
 %%% Блок управления параметрами для выравнивания заголовков в тексте %%%
-\newcommand\myotstup{1.6}
 \newlength{\otstuplen}
-\setlength{\otstuplen}{\myotstup\parindent}
 \setlength{\otstuplen}{\theotstup\parindent}
 \ifnumequal{\value{headingalign}}{0}{% выравнивание заголовков в тексте
     \newcommand{\hdngalign}{\centering}                % по центру
@@ -56,10 +54,10 @@
 \setrmarg{2.55em plus1fil}                             %To have the (sectional) titles in the ToC, etc., typeset ragged right with no hyphenation
 \renewcommand{\cftchapterpagefont}{\normalfont}        % нежирные номера страниц у глав в оглавлении
 \renewcommand{\cftchapterleader}{\cftdotfill{\cftchapterdotsep}}% нежирные точки до номеров страниц у глав в оглавлении
-%\renewcommand{\cftchapterfont}{}                       % нежирные названия глав в оглавлении
+\renewcommand{\cftchapterfont}{}                       % нежирные названия глав в оглавлении
 
 \ifnumgreater{\value{headingdelim}}{0}{%
-    \renewcommand\cftchapteraftersnum{.\space}       % добавляет точку с пробелом после номера раздела в оглавлении
+    %\renewcommand\cftchapteraftersnum{.\space}       % добавляет точку с пробелом после номера раздела в оглавлении
 }{}
 \ifnumgreater{\value{headingdelim}}{1}{%
     \renewcommand\cftsectionaftersnum{.\space}       % добавляет точку с пробелом после номера подраздела в оглавлении
@@ -104,15 +102,16 @@
 %% Работа должна быть выполнена ... размером шрифта 12-14 пунктов (ГОСТ Р 7.0.11-2011, 5.3.8). То есть не должно быть надписей шрифтом более 14. Так и поставим.
 %% Эти установки будут давать одинаковый результат независимо от выбора базовым шрифтом 12 пт или 14 пт
 \newcommand{\basegostsectionfont}{\fontsize{14pt}{16pt}\selectfont\bfseries}
+\newcommand{\basegostsectionfontd}{\fontsize{16pt}{16pt}\selectfont\bfseries}
 
 \makechapterstyle{thesisgost}{%
     \chapterstyle{default}
     \setlength{\beforechapskip}{0pt}
     \setlength{\midchapskip}{0pt}
     \setlength{\afterchapskip}{\theintvl\curtextsize}
-    \renewcommand*{\chapnamefont}{\basegostsectionfont}
-    \renewcommand*{\chapnumfont}{\basegostsectionfont}
-    \renewcommand*{\chaptitlefont}{\basegostsectionfont}
+    \renewcommand*{\chapnamefont}{\basegostsectionfontd}
+    \renewcommand*{\chapnumfont}{\basegostsectionfontd}
+    \renewcommand*{\chaptitlefont}{\basegostsectionfontd}
     \renewcommand*{\chapterheadstart}{}
     \ifnumgreater{\value{headingdelim}}{0}{%
         \renewcommand*{\afterchapternum}{\quad}   % добавляет точку с пробелом после номера раздела
@@ -121,7 +120,7 @@
     }
     \renewcommand*{\printchapternum}{\hdngaligni\hdngalign\chapnumfont \thechapter}
     \renewcommand*{\printchaptername}{}
-    \renewcommand*{\printchapternonum}{\hdngaligni\hdngalign}
+    \renewcommand*{\printchapternonum}{\centering}
 }
 
 \makeatletter
@@ -135,13 +134,13 @@
 \chapterstyle{thesisgost}
 
 \setsecheadstyle{\basegostsectionfont\hdngalign}
-\setsecindent{\otstuplen}
+\setsecindent{12.5mm}
 
 \setsubsecheadstyle{\basegostsectionfont\hdngalign}
-\setsubsecindent{\otstuplen}
+\setsubsecindent{12.5mm}
 
 \setsubsubsecheadstyle{\basegostsectionfont\hdngalign}
-\setsubsubsecindent{\otstuplen}
+\setsubsubsecindent{12.5mm}
 
 \sethangfrom{\noindent #1} %все заголовки подразделов центрируются с учетом номера, как block
 

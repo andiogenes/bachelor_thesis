@@ -20,7 +20,7 @@ for path, subdirs, files in os.walk(ide_dir):
             caption_cntr[caption] += 1
             label = caption.replace('.', '').lower() + str(caption_cntr[caption])
             lst = lstfmt.format(caption=caption, label=label, path=fn[pl:])
-            #ide_files.append('\\textbf{{{caption}}}\n'.format(caption=caption))
+            ide_files.append('\\noindent\\textbf{{{caption}}}\n'.format(caption=caption))
             ide_files.append(lst)
 
 
@@ -36,7 +36,7 @@ for path, subdirs, files in os.walk(compiler_dir):
             caption_cntr[caption] += 1
             label = caption.replace('.', '').lower() + str(caption_cntr[caption])
             lst = lstfmt.format(caption=caption, label=label, path=fn[pl:])
-            #compiler_files.append('\\textbf{{{caption}}}\n'.format(caption=caption))
+            compiler_files.append('\\noindent\\textbf{{{caption}}}\n'.format(caption=caption))
             compiler_files.append(lst)
 
 with open(d + '/ide_listings', 'w') as l:

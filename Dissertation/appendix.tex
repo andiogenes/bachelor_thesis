@@ -1,12 +1,19 @@
-\chapter{Исходный код}\label{app:A}
+\addcontentsline{toc}{chapter}{Приложение А\quad Задание на выполнение ВКР}
+\includepdf[pages=4-5,addtotoc={
+	1,chapter,1,Задание на выполнение ВКР,AppendixA
+}]{docs.pdf}
 
-\section{Исходный код интегрированной среды разработчика}\label{app:A1}
+\stepcounter{chapter}
+
+\chapter{Исходный код}\label{app:B}
+
+%\section{Исходный код интегрированной среды разработчика}\label{app:B1}
 \begingroup
 \captiondelim{ } % разделитель идентификатора с номером от наименования
 \input{listings/ide_listings}
 \endgroup
 
-\section{Исходный код компилятора}\label{app:A2}
+%\section{Исходный код компилятора}\label{app:B2}
 \begingroup
 \captiondelim{ } % разделитель идентификатора с номером от наименования
 \input{listings/compiler_listings}

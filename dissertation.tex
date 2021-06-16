@@ -57,17 +57,11 @@
 
 %%% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
 %\include{Dissertation/title}           % Титульный лист
-\includepdf[pages=1]{doc_prakt.pdf}
+\includepdf[pages=1-2]{docs.pdf}
 
 \include{Dissertation/contents}        % Оглавление
 \ifnumequal{\value{contnumfig}}{1}{}{\counterwithout{figure}{chapter}}
 \ifnumequal{\value{contnumtab}}{1}{}{\counterwithout{table}{chapter}}
-
-% Задание
-\clearpage
-\addcontentsline{toc}{chapter}{Индивидуальное задание}
-\addcontentsline{toc}{section}{Инструктаж по ОТ, ТБ, ПБ, ПВТР}
-\includepdf[pages=3]{doc_prakt.pdf}
 
 \include{Dissertation/introduction}    % Введение
 \ifnumequal{\value{contnumfig}}{1}{\counterwithout{figure}{chapter}
@@ -100,7 +94,7 @@
 \setlength{\otstuplen}{0pt}
 
 \setsecheadstyle{\basegostsectionfont}
-%\include{Dissertation/appendix}        % Приложения
+\include{Dissertation/appendix}        % Приложения
 
 \setcounter{totalappendix}{\value{chapter}} % Подсчёт количества приложений
 
