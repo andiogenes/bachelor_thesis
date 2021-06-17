@@ -15,7 +15,7 @@
 
 Для программы генерируется следующий целевой код на JavaScript (опуская код примитивных функций и среды исполнения):
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 const update = (model, message) => {
     const fsa_1 = (fsa_1_arg_0) => StrToNum(fsa_1_arg_0);
     const fsa_2 = () => Num1();
@@ -52,7 +52,7 @@ const update = (model, message) => {
 
 С установленным флагом устранения хвостовой рекурсии, для программы генерируется следующий код:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 const update = (model, message) => {
     const fsa_1 = (fsa_1_arg_0) => StrToNum(fsa_1_arg_0);
     const fsa_2 = () => Num0();
@@ -99,7 +99,7 @@ const update = (model, message) => {
 
 С выключенными флагами оптимизатора для программы генерируется следующий код:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 const update = (model, message) => {
     const fsa_1 = () => Num1();
     const fsa_2 = (fsa_2_arg_0) => StrToNum(fsa_2_arg_0);
@@ -127,7 +127,7 @@ const update = (model, message) => {
 С установленным флагом мемоизации вычислений, для программы вычисления функции Фибоначчи
 генерируется код вида:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=JavaScript]
 const update = (model, message) => {
     const fsa_1 = () => Num1();
     const fsa_2 = (fsa_2_arg_0) => StrToNum(fsa_2_arg_0);

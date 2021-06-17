@@ -46,3 +46,40 @@
 
 % Мои пакеты
 \usepackage{pdfpages}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, const, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\bfseries,
+  ndkeywordstyle=\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\ttfamily,
+  stringstyle=\ttfamily,
+  sensitive=true
+}
+
+\lstdefinelanguage{Scheme}{
+   keywords={define, define-syntax, define-macro, lambda, define-stream, stream-lambda, begin, call-with-current-continuation, call/cc,
+   call-with-input-file, call-with-output-file, case, cond,
+   do, else, for-each, if,
+   let*, let, let-syntax, letrec, letrec-syntax,
+   let-values, let*-values,
+   and, or, not, delay, force,
+   quasiquote, quote, unquote, unquote-splicing,
+   map, fold, syntax, syntax-rules, eval, environment, query},
+   morecomment=[l]{;;},
+   morecomment=[s]{/*}{*/},
+   morestring=[b]',
+   morestring=[b]",
+   ndkeywords={class, export, boolean, throw, implements, import, this},
+   keywordstyle=\bfseries,
+   ndkeywordstyle=\bfseries,
+   identifierstyle=\color{black},
+   commentstyle=\ttfamily,
+   stringstyle=\ttfamily,
+   sensitive=true
+}
